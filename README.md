@@ -1,7 +1,7 @@
-## React Native - Primeiro - Crud
+## React Native - Frontend - Crud
 
 * Em construção... Crud ainda não está em funcionamento
-* Funcinando frontend e consumo da api apenas
+* Funcionando frontend e consumo da api
 
 *** 
 ### Tecnologias 
@@ -10,6 +10,7 @@
 - MySQL
 - Express
 - Node
+- Xampp
 
 ***
 
@@ -19,13 +20,13 @@
 
 ```
 
-$ git clone https://github.com/<nome do repositorio>
+$ git clone https://github.com/marcilio-freitas27/react-native-primeiro.git
 ```
 
 - Frontend
 
 ```
-$ cd <nome do repositorio>/primeiro
+$ cd react-native-primeiro/frontend
 
 $ npm i 
 
@@ -35,11 +36,10 @@ Opção w - web
 
 ```
 
-
 - Backend
 
 ```
-$ cd <nome do repositorio>/backend-api-sql
+$ cd react-native-primeiro/backend-api-sql
 
 $ npm i 
 
@@ -53,3 +53,9 @@ $ nodemon server.js
 
 - Para melhor visualização, usar o ***f12 ou a inspeção de código*** do seu navegador
 - e alterar para ***barra de ferramentas de dispositivo - ctrl + shift + m***
+
+*** 
+### Outros links
+
+- [ReqRes api](https://reqres.in/api/users)
+- [Código sql](backend-api-sql/sql/dados.sql)

@@ -1,66 +1,67 @@
-primeiro/node_modules
+frontend/node_modules
 backend-api-sql/node_modules
-primeiro/view/talking-popcorn.zip
+frontend/view/talking-popcorn.zip
+primeiro/
 
 # OSX
 #
-primeiro/.DS_Store
+frontend/.DS_Store
 
 # Xcode
 #
 
-primeiro/build/
-primeiro/*.pbxuser
-primeiro/!default.pbxuser
-primeiro/*.mode1v3
-primeiro/!default.mode1v3
-primeiro/*.mode2v3
-primeiro/!default.mode2v3
-primeiro/*.perspectivev3
-primeiro/!default.perspectivev3
-primeiro/xcuserdata
-primeiro/*.xccheckout
-primeiro/*.moved-aside
-primeiro/DerivedData
-primeiro/*.hmap
-primeiro/*.ipa
-primeiro/*.xcuserstate
-primeiro/project.xcworkspace
+frontend/build/
+frontend/*.pbxuser
+frontend/!default.pbxuser
+frontend/*.mode1v3
+frontend/!default.mode1v3
+frontend/*.mode2v3
+frontend/!default.mode2v3
+frontend/*.perspectivev3
+frontend/!default.perspectivev3
+frontend/xcuserdata
+frontend/*.xccheckout
+frontend/*.moved-aside
+frontend/DerivedData
+frontend/*.hmap
+frontend/*.ipa
+frontend/*.xcuserstate
+frontend/project.xcworkspace
 
 # Android/IntelliJ
 #
 
-primeiro/build/
-primeiro/.idea
-primeiro/.gradle
-primeiro/local.properties
-primeiro/*.iml
-primeiro/*.hprof
+frontend/build/
+frontend/.idea
+frontend/.gradle
+frontend/local.properties
+frontend/*.iml
+frontend/*.hprof
 
 # node.js
 #
 
-primeiro/node_modules/
-primeiro/npm-debug.log
-primeiro/yarn-error.log
+frontend/node_modules/
+frontend/npm-debug.log
+frontend/yarn-error.log
 
 # BUCK
-primeiro/buck-out/
-primeiro/\.buckd/
-primeiro/.buckd/
+frontend/buck-out/
+frontend/\.buckd/
+frontend/.buckd/
 \.buckd/
-primeiro/*.keystore
-primeiro/!debug.keystore
+frontend/*.keystore
+frontend/!debug.keystore
 
 # Bundle artifacts
-primeiro/*.jsbundle
+frontend/*.jsbundle
 
 # CocoaPods
-primeiro/ios/Pods/
-primeiro//ios/Pods/
+frontend/ios/Pods/
+frontend//ios/Pods/
 /ios/Pods/
 
 # Expo
-primeiro/.expo/
-primeiro/web-build/
-primeiro/dist/
+frontend/.expo/
+frontend/web-build/
+frontend/dist/
