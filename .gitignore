@@ -1,0 +1,66 @@
+primeiro/node_modules
+backend-api-sql/node_modules
+primeiro/view/talking-popcorn.zip
+
+# OSX
+#
+primeiro/.DS_Store
+
+# Xcode
+#
+
+primeiro/build/
+primeiro/*.pbxuser
+primeiro/!default.pbxuser
+primeiro/*.mode1v3
+primeiro/!default.mode1v3
+primeiro/*.mode2v3
+primeiro/!default.mode2v3
+primeiro/*.perspectivev3
+primeiro/!default.perspectivev3
+primeiro/xcuserdata
+primeiro/*.xccheckout
+primeiro/*.moved-aside
+primeiro/DerivedData
+primeiro/*.hmap
+primeiro/*.ipa
+primeiro/*.xcuserstate
+primeiro/project.xcworkspace
+
+# Android/IntelliJ
+#
+
+primeiro/build/
+primeiro/.idea
+primeiro/.gradle
+primeiro/local.properties
+primeiro/*.iml
+primeiro/*.hprof
+
+# node.js
+#
+
+primeiro/node_modules/
+primeiro/npm-debug.log
+primeiro/yarn-error.log
+
+# BUCK
+primeiro/buck-out/
+primeiro/\.buckd/
+primeiro/.buckd/
+\.buckd/
+primeiro/*.keystore
+primeiro/!debug.keystore
+
+# Bundle artifacts
+primeiro/*.jsbundle
+
+# CocoaPods
+primeiro/ios/Pods/
+primeiro//ios/Pods/
+/ios/Pods/
+
+# Expo
+primeiro/.expo/
+primeiro/web-build/
+primeiro/dist/
