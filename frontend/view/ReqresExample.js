@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native";
 
-import { styles  } from "../style/styleexample"
+import { styles } from "../style/styleexample";
 
 export default function AssetExample({ navigation }) {
   const [users, setUsers] = React.useState([]);
@@ -31,7 +31,11 @@ export default function AssetExample({ navigation }) {
               <View key={user.id}>
                 <Text>Nome: {"\n" + user.first_name + "\n"}</Text>
                 <Text>Email: {user.email + "\n"} </Text>
-                <Image resizeMode="stretch" source={{ uri: "user.avatar" }} />
+                <Image
+                  style={{ width: 100, height: 100 }}
+                  source={{ uri: user.avatar }}
+                />
+                <FlatList data={users} keyExtractor={(users) => users.id} />
               </View>
             </>
           );

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { styles } from "../style/styleexample";
 
-export default function AssetExample({ navigation }) {
+export default function AssetExample( ) {
   const [users, setUsers] = React.useState([]);
   const conn = async () => {
     const res = await fetch("http://localhost:3000/dados");
@@ -24,10 +24,11 @@ export default function AssetExample({ navigation }) {
     <View style={styles.container}>
       <Text>Mysql Test</Text>
       <ScrollView>
-        {users.map((user) => {
+        {
+        users.map((user) => {
             return (
               <>
-                <View key={user.codigo}>
+                <View>
                   <Text>
                     {"\n"}
                     Codigo: {user.id}
