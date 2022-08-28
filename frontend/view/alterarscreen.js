@@ -7,16 +7,20 @@ import {
   SafeAreaView,
 } from "react-native";
 
+//model
+import { setUser, getUser, getItems } from "../model/user";
+
 /**style */
 import { styles } from "../style/stylecadastroscreen";
 
-import React, {useState} from 'react';
+import * as React from 'react';
 const Separator = () => <View style={styles.separator} />;
 
 
 export default function AlterarScreen({ navigation, route }) {
   const [ text, setNome ] = React.useState(''); 
-    const [ email, setEmail ] = React.useState('');
+  const [ email, setEmail ] = React.useState('');
+  const { id, nome, Email } = route.params;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.myborder}>
@@ -25,8 +29,8 @@ export default function AlterarScreen({ navigation, route }) {
           <Text style={styles.textContent}>Nome: </Text>
           <TextInput
             style={styles.input}
-            onChangeText={() => setNome}
-            defaultValue={text}
+            onChangeText={setNome}
+            defaultValue={JSON.stringify(nome)}
           ></TextInput>
           <StatusBar style="auto" />
         </View>
@@ -35,8 +39,8 @@ export default function AlterarScreen({ navigation, route }) {
           <Text style={styles.textContent}>E-mail: </Text>
           <TextInput
             style={styles.input}
-            onChangeText={() => setEmail}
-            defaultValue={email}
+            onChangeText={setEmail}
+            defaultValue={JSON.stringify(Email)}
           ></TextInput>
           <Separator></Separator>
           <Separator></Separator>
@@ -44,7 +48,15 @@ export default function AlterarScreen({ navigation, route }) {
         </View>
         <View style={styles.mybutton}>
           <MyButton
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate({
+              name: "Home",
+              params: {
+                nome: text,
+                email: email
+              },
+              merge: true,
+            }
+          )}
             title="Alterar"
             accessibilityLabel="Learn more about this purple button"
           />

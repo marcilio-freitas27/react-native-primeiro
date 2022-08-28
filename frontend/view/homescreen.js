@@ -19,14 +19,27 @@ import {
 // } from "react-native-table-component";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import * as React from "react";
 
+/* model */
+import { Usuario } from "../model/usuario";
+import { setUser, getUser, getItems, setItems } from "../model/user";
+
+setUser('teste');
+AsyncStorage.setItem('user','teste')
+console.log(JSON.stringify(getUser));
+console.log(AsyncStorage.getItem('user'));
 /* style */
 import { styles } from "../style/stylehomescreen";
 
-/**modal */
-
 const Separator = () => <View style={styles.separator} />;
+
+const usuarios = new Usuario();
+
+const getUsuarios = () => {
+  return usuarios;
+}
 
 export default function HomeScreen({ navigation, route }) {
   // let stateOne = {
@@ -39,30 +52,13 @@ export default function HomeScreen({ navigation, route }) {
   const [modalVisible, setModalVisible] = useState(false);
   React.useEffect(() => {
     if (route.params?.nome && route.params?.email) {
+      console.log(items.length);
     }
   }, [route.params?.nome, route.params?.email]);
-  // const [items, setItems] = React.useState([
+  // const [item, setItem] = React.useState([
   //   { id: "1", nome: "teste", email: "teste@email.com" },
   //   { id: "2", nome: "nome", email: "nome@email.com" },
   // ]);
-  const [items, setItems] = useState([
-    {
-      id: "1",
-      nome: "teste",
-      email: "teste@email.com",
-      alterar: (
-        <Button title="Edit" onPress={() => navigation.push("Alterar")} />
-      ),
-    },
-    {
-      id: "2",
-      nome: "nome",
-      email: "nome@email.com",
-      alterar: (
-        <Button title="Edit" onPress={() => navigation.push("Alterar")} />
-      ),
-    },
-  ]);
   return (
     <View
       style={{
@@ -105,13 +101,11 @@ export default function HomeScreen({ navigation, route }) {
       <Separator></Separator>
       <ScrollView>
         <Text style={styles.textContent}>ID | Nome | Email | Opções</Text>
-        {/* nome: {route.params?.nome}
-          email: {route.params?.email} */}
-        {items.map((item) => (
+        {setItems(getItems()).map((item) => (
           <Text key={item.id}>
-            {item.id}
-            {item.nome}
-            {item.email}
+            {item.id+" " }
+            { item.nome+" " }
+            { item.email+" " }
             {
               <>
                 <Button title="Del" onPress={() => setModalVisible(true)} />
@@ -131,7 +125,10 @@ export default function HomeScreen({ navigation, route }) {
                       </Text>
                       <Pressable
                         style={[styles.button, styles.buttonYes]}
-                        onPress={() => setModalVisible(!modalVisible)}
+                        onPress={() => {
+                          setModalVisible(!modalVisible)
+                          getItems().splice(getItems[item.id], 1)
+                        }}
                       >
                         <Text style={styles.textStyle}>Sim</Text>
                       </Pressable>
@@ -144,7 +141,8 @@ export default function HomeScreen({ navigation, route }) {
                     </View>
                   </View>
                 </Modal>
-              </>
+                <Separator></Separator>
+              </> 
             }
             {item.alterar}
           </Text>

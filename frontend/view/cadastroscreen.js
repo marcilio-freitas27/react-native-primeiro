@@ -1,11 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import * as React from 'react';
-// import { useState } from "react";
+//model
+import { setItems, getUser, getItems, addItems } from "../model/user";
+
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
   View,
   Button as MyButton,
+  Button,
   TextInput,
   SafeAreaView,
 } from "react-native";
@@ -19,6 +23,7 @@ const Separator = () => <View style={styles.separator} />;
 export default function CadastroScreen({ navigation, route }) {
     const [ nomeText, setNome ] = React.useState(''); 
     const [ emailText, setEmail ] = React.useState('');
+    const [items, setItems] = useState(getItems);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.myborder}>
@@ -61,14 +66,32 @@ export default function CadastroScreen({ navigation, route }) {
                 
                 // AsyncStorage.setItem('items', JSON.stringify(savedItems));
                 // navigation.navigate("Home", listItem);
-                navigation.navigate({
-                  name: "Home",
-                  params: { 
-                    nome: nomeText,
-                    email: emailText
-                  },
-                  merge: true,
-                });
+                // navigation.navigate({
+                //   name: "Home",
+                //   params: { 
+                //     nome: nomeText,
+                //     email: emailText
+                //   },
+                //   merge: true,
+                // });
+                addItems({
+                  id: items.length + 1,
+                  nome: nomeText,
+                  email: emailText,
+                  alterar: (
+                    <Button title="Edit" onPress={
+                      () => 
+                        navigation.navigate("Alterar",{
+                          id: items.id,
+                          nome: items.nome,
+                          email: items.email,
+                        })
+                    } />
+                  ),
+                })
+                setItems(getItems)
+                navigation.navigate("Home");
+                console.log(items.length);
             }
           }
             title="Cadastrar"
