@@ -1,12 +1,12 @@
+/* react */
 import * as React from "react";
 import {
   Text,
   View,
-  StyleSheet,
-  Image,
   ScrollView,
-  FlatList,
 } from "react-native";
+
+/* styles*/
 import { styles } from "../style/styleexample";
 
 export default function AssetExample( ) {

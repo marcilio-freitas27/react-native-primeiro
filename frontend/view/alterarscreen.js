@@ -1,4 +1,6 @@
+/* react */
 import { StatusBar } from "expo-status-bar";
+import * as React from 'react';
 import {
   Text,
   View,
@@ -7,15 +9,13 @@ import {
   SafeAreaView,
 } from "react-native";
 
-//model
+/*model*/
 import { setUser, getUser, getItems } from "../model/user";
 
 /**style */
 import { styles } from "../style/stylecadastroscreen";
 
-import * as React from 'react';
 const Separator = () => <View style={styles.separator} />;
-
 
 export default function AlterarScreen({ navigation, route }) {
   const [ text, setNome ] = React.useState(''); 
@@ -30,7 +30,7 @@ export default function AlterarScreen({ navigation, route }) {
           <TextInput
             style={styles.input}
             onChangeText={setNome}
-            defaultValue={JSON.stringify(nome)}
+            defaultValue={nome}
           ></TextInput>
           <StatusBar style="auto" />
         </View>
@@ -40,7 +40,7 @@ export default function AlterarScreen({ navigation, route }) {
           <TextInput
             style={styles.input}
             onChangeText={setEmail}
-            defaultValue={JSON.stringify(Email)}
+            defaultValue={Email}
           ></TextInput>
           <Separator></Separator>
           <Separator></Separator>
@@ -48,15 +48,7 @@ export default function AlterarScreen({ navigation, route }) {
         </View>
         <View style={styles.mybutton}>
           <MyButton
-            onPress={() => navigation.navigate({
-              name: "Home",
-              params: {
-                nome: text,
-                email: email
-              },
-              merge: true,
-            }
-          )}
+            onPress={() => navigation.navigate("Home")}
             title="Alterar"
             accessibilityLabel="Learn more about this purple button"
           />
@@ -65,8 +57,3 @@ export default function AlterarScreen({ navigation, route }) {
     </SafeAreaView>
   );
 }
-
-
-const onPressLearnMore = () => {
-  alert("Message is here!");
-};

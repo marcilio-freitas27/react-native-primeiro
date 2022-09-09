@@ -1,16 +1,18 @@
+
+/* react */
 import * as React from "react";
 import {
   Text,
   View,
-  StyleSheet,
   Image,
   ScrollView,
   FlatList,
 } from "react-native";
 
+/* style */
 import { styles } from "../style/styleexample";
 
-export default function AssetExample({ navigation }) {
+export default function AssetExample() {
   const [users, setUsers] = React.useState([]);
   const conn = async () => {
     const res = await fetch("https://reqres.in/api/users");

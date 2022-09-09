@@ -1,11 +1,8 @@
+/* react */
 import { StatusBar } from "expo-status-bar";
-import * as React from 'react';
-//model
-import { setItems, getUser, getItems, addItems } from "../model/user";
-
+import * as React from "react";
 import { useState } from "react";
 import {
-  StyleSheet,
   Text,
   View,
   Button as MyButton,
@@ -13,7 +10,9 @@ import {
   TextInput,
   SafeAreaView,
 } from "react-native";
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+
+/* model */
+import { setItems, getUser, getItems, addItems } from "../model/user";
 
 /**style */
 import { styles } from "../style/stylecadastroscreen";
@@ -21,9 +20,9 @@ import { styles } from "../style/stylecadastroscreen";
 const Separator = () => <View style={styles.separator} />;
 
 export default function CadastroScreen({ navigation, route }) {
-    const [ nomeText, setNome ] = React.useState(''); 
-    const [ emailText, setEmail ] = React.useState('');
-    const [items, setItems] = useState(getItems);
+  const [nomeText, setNome] = React.useState("");
+  const [emailText, setEmail] = React.useState("");
+  const [items, setItems] = useState(getItems);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.myborder}>
@@ -46,7 +45,7 @@ export default function CadastroScreen({ navigation, route }) {
             style={styles.inputTwo}
             value={emailText}
             onChangeText={setEmail}
-            ></TextInput>
+          ></TextInput>
           <Separator></Separator>
           <Separator></Separator>
           <StatusBar style="auto" />
@@ -54,46 +53,25 @@ export default function CadastroScreen({ navigation, route }) {
         <View style={styles.mybutton}>
           <MyButton
             onPress={() => {
-                // setNome('nome');
-                // setEmail('email');
-                // alert(nome + " " +  email)
-                // const listItem = {id: new Date().getTime(), nome, email};
-                // let savedItems = [];
-                // const response = AsyncStorage.getItem('items');
-                
-                // if(response) savedItems = JSON.parse(response);
-                // savedItems.push(listItem);
-                
-                // AsyncStorage.setItem('items', JSON.stringify(savedItems));
-                // navigation.navigate("Home", listItem);
-                // navigation.navigate({
-                //   name: "Home",
-                //   params: { 
-                //     nome: nomeText,
-                //     email: emailText
-                //   },
-                //   merge: true,
-                // });
-                addItems({
-                  id: items.length + 1,
-                  nome: nomeText,
-                  email: emailText,
-                  alterar: (
-                    <Button title="Edit" onPress={
-                      () => 
-                        navigation.navigate("Alterar",{
-                          id: items.id,
-                          nome: items.nome,
-                          email: items.email,
-                        })
-                    } />
-                  ),
-                })
-                setItems(getItems)
-                navigation.navigate("Home");
-                console.log(items.length);
-            }
-          }
+              addItems({
+                id: items.length + 1,
+                nome: nomeText,
+                email: emailText,
+                alterar: (
+                  <Button
+                    title="Edit"
+                    onPress={() =>
+                      navigation.navigate("Alterar", {
+                        id: items.id,
+                        nome: items.nome,
+                        email: items.email,
+                      })
+                    }
+                  />
+                ),
+              });
+              navigation.navigate("Home");
+            }}
             title="Cadastrar"
             accessibilityLabel="Learn more about this purple button"
           />
@@ -102,8 +80,3 @@ export default function CadastroScreen({ navigation, route }) {
     </SafeAreaView>
   );
 }
-
-const onPressLearnMore = () => {
-  alert("Message is here!");
-};
-

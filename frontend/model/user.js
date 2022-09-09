@@ -1,48 +1,16 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useState } from "react";
-import {
-  Text,
-  View,
-  Button as MyButton,
-  Button,
-  ScrollView,
-  Modal,
-  Pressable,
-  Post,
-} from "react-native";
 
 const items = [
   {
     id: "1",
     nome: "teste",
     email: "teste@email.com",
-    alterar: (
-      <Button
-        title="Edit"
-        onPress={() =>
-          navigation.navigate("Alterar", {
-            nome: items.nome,
-            Email: items.email,
-          })
-        }
-      />
-    ),
+    
   },
   {
     id: "2",
     nome: "nome",
     email: "nome@email.com",
-    alterar: (
-      <Button
-        title="Edit"
-        onPress={() =>
-          navigation.navigate("Alterar", {
-            nome: items.nome,
-            email: items.email,
-          })
-        }
-      />
-    ),
   },
 ];
 
