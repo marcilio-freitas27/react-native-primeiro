@@ -1,7 +1,9 @@
 ## React Native - Frontend - Crud
 
-* Em construção... Crud ainda não está em funcionamento
-* Funcionando frontend e consumo da api
+* Atualização = 09-09-2022
+* Em construção... Exclusão e inclusão foram implementadas, mas ainda não estão 100% funcionais
+* Crud incompleto e sem o uso do SGBD(MySQL)
+* Funcionando: frontend ,consumo da api(ReqRes, MySQL) e listagem de dados
 
 *** 
 ### Tecnologias 
@@ -11,6 +13,8 @@
 - Express
 - Node
 - Xampp
+- Arduino
+- Johnny Five
 
 ***
 
