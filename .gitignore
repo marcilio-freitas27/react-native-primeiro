@@ -64,6 +64,11 @@ frontend//ios/Pods/
 ios/Pods/
 
 # Expo
+.expo
+.vscode
 frontend/.expo/
 frontend/web-build/
 frontend/dist/
+arduino/package-lock.json
+frontend/package-lock.json
+backend-api-sql/package-lock.json

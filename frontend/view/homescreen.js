@@ -47,6 +47,13 @@ export default function HomeScreen({ navigation, route }) {
         }}
       />
       <Separator></Separator>
+      <Button
+        title="Arduino"
+        onPress={() => {
+          navigation.navigate("Item");
+        }}
+      />
+      <Separator></Separator>
       <StatusBar />
       <Text style={styles.text}>Lista de Usuários</Text>
       <Separator></Separator>
