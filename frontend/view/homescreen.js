@@ -55,7 +55,7 @@ export default function HomeScreen({ navigation, route }) {
       <Button
         title="Arduino"
         onPress={() => {
-          navigation.navigate("Item");
+          navigation.navigate("Arduino");
         }}
       />
       <Separator></Separator>

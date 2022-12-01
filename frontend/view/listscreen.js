@@ -9,10 +9,10 @@ import {
 /* styles*/
 import { styles } from "../style/styleexample";
 
-export default function AssetExample( ) {
+export default function ListScreen( ) {
   const [users, setUsers] = React.useState([]);
   const conn = async () => {
-    const res = await fetch("http://localhost:3000");
+    const res = await fetch("http://localhost:3000/dados");
     const data = await res.json();
     setUsers(data);
   };

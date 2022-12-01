@@ -12,7 +12,7 @@ import {
 /* style */
 import { styles } from "../style/styleexample";
 
-export default function AssetExample() {
+export default function ReqresScreen() {
   const [users, setUsers] = React.useState([]);
   const conn = async () => {
     const res = await fetch("https://reqres.in/api/users");

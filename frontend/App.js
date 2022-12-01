@@ -9,10 +9,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./view/homescreen";
 import CadastroScreen from "./view/cadastroscreen";
 import AlterarScreen from "./view/alterarscreen";
-import AssetExample from "./view/AssetExample";
-import ReqresExample from "./view/ReqresExample";
-import Item from "./view/item";
-import Login from "./view/loginscreen";
+import ListScreen from "./view/listscreen";
+import ReqresScreen from "./view/reqresscreen";
+import ArduinoScreen from "./view/arduinoscreen";
+import LoginScreen from "./view/loginscreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,10 +21,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Item" component={Item} />
-        <Stack.Screen name="Reqres"component={ReqresExample} />
-        <Stack.Screen name="Mysql" component={AssetExample} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Arduino" component={ArduinoScreen} />
+        <Stack.Screen name="Reqres"component={ReqresScreen} />
+        <Stack.Screen name="Mysql" component={ListScreen} />
         <Stack.Screen name="Home" component={HomeScreen}
           options={{
             headerRight: () => (
