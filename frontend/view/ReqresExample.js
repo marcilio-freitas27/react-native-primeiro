@@ -30,14 +30,14 @@ export default function AssetExample() {
         {users.map((user) => {
           return (
             <>
-              <View key={user.id}>
+              <View>
                 <Text>Nome: {"\n" + user.first_name + "\n"}</Text>
                 <Text>Email: {user.email + "\n"} </Text>
                 <Image
                   style={{ width: 100, height: 100 }}
                   source={{ uri: user.avatar }}
                 />
-                <FlatList data={users} keyExtractor={(users) => users.id} />
+                {/* <FlatList data={users} keyExtractor={(users) => users.id} /> */}
               </View>
             </>
           );

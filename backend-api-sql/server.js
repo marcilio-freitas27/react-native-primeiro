@@ -3,6 +3,9 @@ const app = express()
 const port = 3000
 const mysql = require('mysql')
 const cors = require('cors')
+require("dotenv-safe").config();
+const jwt = require('jsonwebtoken');
+const password = '12345';
 
 const con = new mysql.createConnection({
   host: 'localhost',
@@ -19,7 +22,7 @@ app.use(express.urlencoded({
   })
 );
 
-app.get('/con', (req,res) => {
+app.get('/', (req,res) => {
   try{
     if(con){
       res.status(200).send('Conectado');
@@ -29,10 +32,6 @@ app.get('/con', (req,res) => {
   }
 })
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 app.get('/dados', (req, res)=>{
   con.query('SELECT * FROM clientes',(err, result) => {
     if(err) {
@@ -40,6 +39,17 @@ app.get('/dados', (req, res)=>{
     }
     res.status(200).send(result);
   });
+})
+
+app.post('/login', (req, res, next) => {
+    if(req.body.user === 'user' && req.body.pwd === '123'){
+        const id = 1; 
+        // const token = jwt.sign({ id }, password);
+        const token = jwt.sign({ id }, process.env.SECRET);
+        return res.json({ auth: true, token: token});
+    }
+
+    res.status(500).json({message: 'Invalid password or username.'});
 })
 
 app.listen(port, () => {

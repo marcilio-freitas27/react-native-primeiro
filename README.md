@@ -1,9 +1,10 @@
 ## React Native - Frontend - Crud
 
-* Atualização = 09-09-2022
-* Em construção... Exclusão e inclusão foram implementadas, mas ainda não estão 100% funcionais
+* Atualização = 01-12-2022
+* Em construção... Exclusão e inclusão foram implementadas funcionais.
 * Crud incompleto e sem o uso do SGBD(MySQL)
-* Funcionando: frontend ,consumo da api(ReqRes, MySQL) e listagem de dados
+* A opção de alterar puxa os dados cadastrados mas ainda não altera.
+* Funcionando: frontend ,consumo da api(ReqRes, MySQL - Heroku API) e listagem de dados.
 
 *** 
 ### Tecnologias 
@@ -11,9 +12,9 @@
 - React Native 
 - MySQL
 - Express
-- Node
+- Node v16.15
 - Xampp
-- Arduino
+- Arduino 
 - Johnny Five
 
 ***
@@ -34,9 +35,7 @@ $ cd react-native-primeiro/frontend
 
 $ npm i 
 
-$ npm start
-
-Opção w - web
+$ expo start --web
 
 ```
 

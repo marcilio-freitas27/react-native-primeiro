@@ -17,6 +17,11 @@ export default function HomeScreen({ navigation, route }) {
     if (route.params?.nome && route.params?.email) {
     }
   }, [route.params?.nome, route.params?.email]);
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+        headerLeft: false
+    });
+  }, [navigation]);
   return (
     <View
       style={{
